@@ -15,17 +15,17 @@ namespace ESP8266_IoT {
     let tobesendstring = ""
 
     /**
-     * TODO: Set pin RX and TX for ESP8266 Serial Wifi Module，Baud rate: 9600.
-     * @param wifiRX describe parameter here, eg: SerialPin.P0
-     * @param wifiTX describe parameter here, eg: SerialPin.P1
+     * TODO: Set pin RX and TX for ESP8266 Serial Wifi Module，Baud rate: 115200.
+     * @param wifiRX describe parameter here, eg: SerialPin.P1
+     * @param wifiTX describe parameter here, eg: SerialPin.P2
      */
     //% weight=100
-    //% blockId="wifi_init" block="set ESP8266 RX %wifiRX| TX %wifiTX|at baud rate 9600"
+    //% blockId="wifi_init" block="set ESP8266 RX %wifiRX| TX %wifiTX|at baud rate 115200"
     export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
         serial.redirect(
             wifiRX,
             wifiTX,
-            BaudRate.BaudRate9600
+            BaudRate.BaudRate115200
         )
         basic.pause(10)
         serial.writeLine("AT+CWMODE=1")
