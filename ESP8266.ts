@@ -71,10 +71,9 @@ namespace ESP8266_IoT {
      * @param n1 describe parameter here, eg: 0
      */
     //% weight=97
-    //% blockId="send_text" block="set data to be send : Write API Key= %write_api_key|field1= %n1
+    //% blockId="send_text" block="set data to be send : Write API Key= %write_api_key|field1= %n1"
     export function tosendtext(write_api_key: string,
-                                n1: number 
-								              ): void {
+                                n1: number ): void {
         let text=""   
         text = "GET /update?key="
             + write_api_key
