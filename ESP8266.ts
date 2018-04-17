@@ -76,13 +76,13 @@ namespace ESP8266_IoT {
      * TODO: Set data to be sent.
      * @param write_api_key describe parameter here, eg: "your write api key"
      * @param n1 describe parameter here, eg: 0
-     * @param n2 describe parameter here, eg: 0
-     * @param n3 describe parameter here, eg: 0
-     * @param n4 describe parameter here, eg: 0
-     * @param n5 describe parameter here, eg: 0
-     * @param n6 describe parameter here, eg: 0
-     * @param n7 describe parameter here, eg: 0
-     * @param n8 describe parameter here, eg: 0
+     // * @param n2 describe parameter here, eg: 0
+     // * @param n3 describe parameter here, eg: 0
+     // * @param n4 describe parameter here, eg: 0
+     // * @param n5 describe parameter here, eg: 0
+     // * @param n6 describe parameter here, eg: 0
+     // * @param n7 describe parameter here, eg: 0
+     // * @param n8 describe parameter here, eg: 0
      */
     //% weight=97
     //% blockId="send_text" block="set data to be send : Write API Key= %write_api_key|field1= %n1|field2= %n2|field3= %n3|field4= %n4|field5= %n5|field6= %n6|field7= %n7|field8= %n8"
