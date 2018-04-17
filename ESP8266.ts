@@ -29,11 +29,11 @@ namespace ESP8266_IoT {
         )
         basic.pause(10)
         serial.writeLine("AT")
-        basic.pause(5000)
+        basic.pause(8000)
         serial.writeLine("AT+CWMODE=1")
-        basic.pause(5000)
+        basic.pause(6000)
         serial.writeLine("AT+RST")
-        basic.pause(5000)
+        basic.pause(8000)
         // Add code here
     }
 
@@ -57,7 +57,7 @@ namespace ESP8266_IoT {
                  + key
                  + "\""
         serial.writeLine(text)
-        basic.pause(6000)
+        basic.pause(7000)
     }
 
     /**
@@ -67,9 +67,9 @@ namespace ESP8266_IoT {
     //% blockId="TCP_connect" block="connect thingspeak"
     export function connectthingspeak(): void {
         // Add code here
-        let text = "AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80"
+        let text = "AT+CIPSTART=\"TCP\",\"184.106.153.149\",80"
         serial.writeLine(text)
-        basic.pause(6000)
+        basic.pause(7000)
     }
 
     /**
@@ -87,33 +87,34 @@ namespace ESP8266_IoT {
     //% weight=97
     //% blockId="send_text" block="set data to be send : Write API Key= %write_api_key|field1= %n1|field2= %n2|field3= %n3|field4= %n4|field5= %n5|field6= %n6|field7= %n7|field8= %n8"
     export function tosendtext(write_api_key: string,
-                                n1: number, 
-                                n2: number, 
-                                n3: number, 
-                                n4: number, 
-                                n5: number, 
-                                n6: number, 
-                                n7: number, 
-                                n8: number ): void {
+                                n1: number 
+                                // n2: number, 
+                                // n3: number, 
+                                // n4: number, 
+                                // n5: number, 
+                                // n6: number, 
+                                // n7: number, 
+                                // n8: number 
+								              ): void {
         let text=""   
         text = "GET /update?key="
             + write_api_key
             + "&field1="
             + n1
-            + "&field2="
-            + n2
-            + "&field3="
-            + n3
-            + "&field4="
-            + n4  
-            + "&field5="
-            + n5
-            + "&field6="
-            + n6
-            + "&field7="
-            + n7
-            + "&field8="
-            + n8  
+            // + "&field2="
+            // + n2
+            // + "&field3="
+            // + n3
+            // + "&field4="
+            // + n4  
+            // + "&field5="
+            // + n5
+            // + "&field6="
+            // + n6
+            // + "&field7="
+            // + n7
+            // + "&field8="
+            // + n8  
         tobesendstring = text              
         // Add code here
     }
@@ -128,9 +129,9 @@ namespace ESP8266_IoT {
         text = "AT+CIPSEND=" 
             + (tobesendstring.length + 2)
         serial.writeLine(text)
-        basic.pause(3000)
+        basic.pause(7000)
         serial.writeLine(tobesendstring)
-        basic.pause(6000)
+        basic.pause(7000)
         // Add code here
 
     }
