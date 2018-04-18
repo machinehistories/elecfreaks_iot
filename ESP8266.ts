@@ -1,4 +1,4 @@
-
+﻿
 /**
  * Use this file to define custom functions and blocks.
  * Read more at https://makecode.microbit.org
@@ -15,17 +15,17 @@ namespace ESP8266_IoT {
     let tobesendstring = ""
 
     /**
-     * TODO: Set pin RX and TX for ESP8266 Serial Wifi Module，Baud rate: 115200.
+     * TODO: Set pin RX and TX for ESP8266 Serial Wifi Module，Baud rate: 9600.
      * @param wifiRX describe parameter here, eg: SerialPin.P2
      * @param wifiTX describe parameter here, eg: SerialPin.P1
      */
     //% weight=100
-    //% blockId="wifi_init" block="set ESP8266 RX %wifiRX| TX %wifiTX|at baud rate 115200"
+    //% blockId="wifi_init" block="set ESP8266 RX %wifiRX| TX %wifiTX|at baud rate 9600"
     export function initwifi(wifiRX: SerialPin, wifiTX: SerialPin): void {
         serial.redirect(
             wifiRX,
             wifiTX,
-            BaudRate.BaudRate115200
+            BaudRate.BaudRate9600
         )
         basic.pause(10)
         serial.writeLine("AT")
