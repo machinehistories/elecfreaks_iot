@@ -1,4 +1,3 @@
-﻿
 /**
  * Use this file to define custom functions and blocks.
  * Read more at https://makecode.microbit.org
@@ -25,13 +24,14 @@ namespace ESP8266_IoT {
         serial.redirect(
             wifiRX,
             wifiTX,
-            BaudRate.BaudRate9600
+            BaudRate.BaudRate115200
         )
         basic.pause(10)
-        serial.writeLine("AT")
-        basic.pause(8000)
-        serial.writeLine("AT+CWMODE=1")
-        basic.pause(6000)
+        //serial.writeLine("AT")
+        serial.writeString("AT+CWMODE=1" + "\u000D" + "\u000A")
+        basic.pause(5000)
+        serial.writeString("AT+RST" + "\u000D" + "\u000A")
+        basic.pause(5000)
         // Add code here
     }
 
@@ -49,7 +49,7 @@ namespace ESP8266_IoT {
                  + "\",\""
                  + key
                  + "\""
-        serial.writeLine(text)
+        serial.writeString(text + "\u000D" + "\u000A")
         basic.pause(7000)
     }
 
@@ -61,7 +61,7 @@ namespace ESP8266_IoT {
     export function connectthingspeak(): void {
         // Add code here
         let text = "AT+CIPSTART=\"TCP\",\"184.106.153.149\",80"
-        serial.writeLine(text)
+        serial.writeString(text + "\u000D" + "\u000A")
         basic.pause(7000)
     }
 
@@ -92,10 +92,10 @@ namespace ESP8266_IoT {
         let text = ""
         text = "AT+CIPSEND=" 
             + (tobesendstring.length + 2)
-        serial.writeLine(text)
-        basic.pause(7000)
-        serial.writeLine(tobesendstring)
-        basic.pause(7000)
+         serial.writeString(text + "\u000D" + "\u000A")
+        basic.pause(6000)
+        serial.writeString(tobesendstring + "\u000D" + "\u000A")
+        basic.pause(6000)
         // Add code here
 
     }
